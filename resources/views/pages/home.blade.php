@@ -18,4 +18,11 @@
     @include('components.popular.popular')
     @include('components.students.students')
     @include('components.graduates.graduates')
+    @foreach ($courses as $course)
+
+    <a href="{{ route('training', $course) }}">
+        <h2>{{ $course->title }}</h2>
+    </a>
+
+@endforeach
 @endsection

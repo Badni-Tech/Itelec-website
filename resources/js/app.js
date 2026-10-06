@@ -1,4 +1,11 @@
+import '../css/app.css';
 import '../css/app.scss';
+
+import Alpine from 'alpinejs';
+
+window.Alpine = Alpine;
+
+Alpine.start();
 document.querySelectorAll('.filter-blogs a').forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();

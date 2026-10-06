@@ -10,8 +10,8 @@
             <div class="training-start-left">
                 <a href="/">All trainings</a>
                 <img src="{{ asset('images/cisco-trainins.png') }}" alt="">
-                <h1>Enterprise Network Architecture Principles</h1>
-                <p>This INE course, taught by CCIE Keith Bogart, provides network engineers pursuing the Cisco CCNP ENCOR certification with a clear and practical understanding of modern enterprise network architecture.<br/>Through detailed exploration of hierarchical campus design models, learners will study Access, Distribution, and Core layer functions.</p>
+                <h1>{{ $course->title }}</h1>
+                <p>{{  $course->description  }}</p>
                 <div><i class="bi bi-star-fill"></i>4.9 Rating • <i class="bi bi-people"></i>140 Graduator</div>
             </div>
         </section>
@@ -73,8 +73,8 @@
     <div class="training-start-right">
         <img src="{{ asset('images/media.png') }}" alt="">
         <h2>About Training</h2>
-        <span><i class="bi bi-calendar-event"></i> Duration: 30 Days  -  Flexible scheduling</span>
-        <span><i class="bi bi-clock"></i> Total: 48 Hours</span>
+        <span><i class="bi bi-calendar-event"></i> Duration: {{  $course->duration  }}  -  Flexible scheduling</span>
+        <span><i class="bi bi-clock"></i> Total: {{  $course->total  }} Hours</span>
         <span><i class="bi bi-hand-index"></i> 100% Practical</span>
         <span><i class="bi bi-patch-check"></i> Certificate of completion</span>
         
@@ -82,22 +82,21 @@
         <div class="tutor">
             <img src="{{ asset('images/student-avatar.png') }}" alt="">
             <div>
-                <h3>Zakaria TADRIST</h3>
-                <p>Expert in Computer Networks & Telecommunications</p>
+                <h3>{{  $course->instructor  }}</h3>
+                <p>{{  $course->instructor_des  }}</p>
             </div>
         </div>
 
         <div class="price-section">
             <p class="price">Start from</p>
             <span class="price1">4,000 DA </span>
-            <span class="price2"> 3,750 DA</span>
+            <span class="price2"> {{  $course->price  }}</span>
         </div>
         <span class="time-left">21 hours left at this price!</span>
         <a href="/">Register Now !</a>
         <p class="group">Next group start on 15 August</p>
     </div>
 </div>
-
 <section class="end">
     <div class="plans">
         <div class="plans-card">
