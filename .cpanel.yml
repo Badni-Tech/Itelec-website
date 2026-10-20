@@ -1,0 +1,8 @@
+
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/itelecte/repositories/Itelec-website
+    - /bin/mkdir -p $DEPLOYPATH
+    - /bin/cp -R app bootstrap config database resources routes storage artisan composer.json composer.lock $DEPLOYPATH/
+    - /bin/cp -R public $DEPLOYPATH/
