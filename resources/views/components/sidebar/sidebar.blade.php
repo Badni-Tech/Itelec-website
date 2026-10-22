@@ -4,11 +4,12 @@
         <h1>Categories</h1>
         <span><img src="{{ asset('images/all-trainings.png') }}" alt=""> All trainings <p>#</p></span>
         <span><img src="{{ asset('images/cisco-trainings.png') }}" alt=""> Cisco Systems <p>#</p></span>
-        <span><img src="{{ asset('images/comptia-trainings.png') }}" alt=""> CompTIA <p>#</p></span>
+        <span><img src="{{ asset('images/ai-trainings.png') }}" alt=""> Artificial Intelligence <p>#</p></span>
         <span><img src="{{ asset('images/microsoft-trainings.png') }}" alt=""> Microsoft Azure <p>#</p></span>
         <span><img src="{{ asset('images/cybersecurity-trainings.png') }}" alt=""></i> Cybersecurity <p>#</p></span>
         <span><img src="{{ asset('images/web-development-different.png') }}" alt=""></i> Web Development <p>#</p></span>
-        <span><img src="{{ asset('images/ai-trainings.png') }}" alt=""> Artificial Intelligence <p>#</p></span>
+
+        <span><img src="{{ asset('images/comptia-trainings.png') }}" alt=""> CompTIA <p>#</p></span>
         <span><img src="{{ asset('images/5G-trainings.png') }}" alt=""> Telecommunications <p>#</p></span>
         <span><img src="{{ asset('images/cctv-trainings.png') }}" alt=""> Security Systems <p>#</p></span>
     </div><br>
