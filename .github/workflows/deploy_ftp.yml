@@ -34,13 +34,13 @@ jobs:
       - name: Test FTP reachability
         run: nc -vz -w 10 ${{ secrets.FTP_SERVER }} 21
 
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.2'
+      # - name: Setup PHP
+      #   uses: shivammathur/setup-php@v2
+      #   with:
+      #     php-version: '8.2'
 
-      - name: Install dependencies
-        run: composer install --no-dev --optimize-autoloader --no-interaction --no-progress
+      # - name: Install dependencies
+      #   run: composer install --no-dev --optimize-autoloader --no-interaction --no-progress
 
       - name: Deploy to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
@@ -51,7 +51,7 @@ jobs:
           protocol: ftps
           port: 21
           security: loose
-          timeout: 180000
+          timeout: 300000
           server-dir: ${{ secrets.FTP_DIR }}   # adjust to your layout
           exclude: |
             **/.git*
