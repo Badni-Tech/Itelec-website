@@ -24,10 +24,7 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         port: 21
-        protocol: ftps # Forces FTP over SSL
-        security: loose # Allows cPanel's self-signed SSL certificates if applicable
         timeout: 180000 # Increases threshold to 3 minutes
-        server-dir: ${{ secrets.FTP_DIR }}
         exclude: |
           **/.git*
           **/.git*/**
