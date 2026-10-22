@@ -27,10 +27,10 @@
                 About us
             </a>
 
-            <a href="{{ url('/blogs') }}"
+            {{-- <a href="{{ url('/blogs') }}"
             class="{{ request()->is('blogs') ? 'active' : '' }}">
                 Blogs
-            </a>
+            </a> --}}
         </div>
 
         <div class="nav-right">
@@ -57,7 +57,7 @@
         <a href="{{ url('/') }}" class="{{ request()->is('/') ? 'active' : '' }}">Home</a>
         <a href="{{ url('/trainings') }}" class="{{ request()->is('trainings') ? 'active' : '' }}">Trainings</a>
         <a href="{{ url('/about') }}" class="{{ request()->is('about') ? 'active' : '' }}">About us</a>
-        <a href="{{ url('/blogs') }}" class="{{ request()->is('blogs') ? 'active' : '' }}">Blogs</a>
+        <a href="{{ url('/blogs') }}" class="{{ request()->is('blogs') ? 'active' : '' }}">Blogss</a>
 
         <select>
             <option value="gb">ENG</option>

@@ -6,9 +6,9 @@
             <i class="bi bi-chevron-right"></i>
         </a>
 
-        <a href="{{ url('/trainings/comptia') }}" class="trainings-hover-item">
-            <img src="{{ asset('images/comptia.png') }}" alt="CompTIA">
-            <p>CompTIA</p>
+        <a href="{{ url('/trainings/ai-enterprises') }}" class="trainings-hover-item">
+            <img src="{{ asset('images/ai-dropdown.png') }}" alt="AI in Enterprises">
+            <p>AI in Enterprises</p>
             <i class="bi bi-chevron-right"></i>
         </a>
 
@@ -30,11 +30,12 @@
             <i class="bi bi-chevron-right"></i>
         </a>
 
-        <a href="{{ url('/trainings/ai-enterprises') }}" class="trainings-hover-item">
-            <img src="{{ asset('images/ai-dropdown.png') }}" alt="AI in Enterprises">
-            <p>AI in Enterprises</p>
+        <a href="{{ url('/trainings/comptia') }}" class="trainings-hover-item">
+            <img src="{{ asset('images/comptia.png') }}" alt="CompTIA">
+            <p>CompTIA</p>
             <i class="bi bi-chevron-right"></i>
         </a>
+
 
         <a href="{{ url('/trainings/telecommunications') }}" class="trainings-hover-item">
             <img src="{{ asset('images/5G.png') }}" alt="Telecommunications">
