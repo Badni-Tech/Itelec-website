@@ -15,7 +15,7 @@ jobs:
 
       - name: Test FTP port 21
         run: |
-          HOST="197.140.11.7"
+          HOST="${{ secrets.FTP_SERVER }}"
 
           if timeout 12 bash -c "echo > /dev/tcp/$HOST/21" 2>/dev/null; then
             echo "SUCCESS: TCP port 21 is reachable"
@@ -28,7 +28,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Test FTP reachability
-        run: nc -vz -w 10 197.140.11.7 21
+        run: nc -vz -w 10 ${{ secrets.FTP_SERVER }} 21
 
       # - name: Install FTP client
       #   run: sudo apt-get update && sudo apt-get install -y lftp
@@ -64,8 +64,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Test FTP reachability
-        run: nc -vz -w 10 197.140.11.7 21
-        
+        run: nc -vz -w ${{ secrets.FTP_SERVER }} 21
+
       - name: Deploy to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
