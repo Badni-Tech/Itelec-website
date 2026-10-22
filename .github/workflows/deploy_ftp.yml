@@ -2,7 +2,7 @@ name: Laravel Auto Deployment
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "dev"]
 
 jobs:
   test-ftp:
@@ -24,8 +24,7 @@ jobs:
             ls
             bye
           "
-  laravel-tests:
-  # deploy:
+  laravel-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -53,7 +52,7 @@ jobs:
           port: 21
           security: loose
           timeout: 180000
-          server-dir: ./laravel_app/   # adjust to your layout
+          server-dir: ${{ secrets.FTP_DIR }}   # adjust to your layout
           exclude: |
             **/.git*
             **/.git*/**
