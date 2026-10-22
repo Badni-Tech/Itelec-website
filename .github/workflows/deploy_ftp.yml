@@ -9,6 +9,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
+      - name: Show runner public IP
+        run: curl -s https://api.ipify.org && echo
+
+      - name: Test FTP port 21
+        run: |
+          HOST="197.140.11.7"
+
+          if timeout 12 bash -c "echo > /dev/tcp/$HOST/21" 2>/dev/null; then
+            echo "SUCCESS: TCP port 21 is reachable"
+          else
+            echo "FAILED: Cannot establish TCP connection to port 21"
+            exit 1
+          fi
+
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -45,7 +60,12 @@ jobs:
 
     steps:
 
+      - name: Checkout code
+        uses: actions/checkout@v4
 
+      - name: Test FTP reachability
+        run: nc -vz -w 10 197.140.11.7 21
+        
       - name: Deploy to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
