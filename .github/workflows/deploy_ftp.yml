@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Test FTP reachability
-        run: nc -vz -w 10 ${{ secrets.FTP_SERVER }} 21
+        run: nc -vz -w 10 197.140.11.7 21
 
       # - name: Install FTP client
       #   run: sudo apt-get update && sudo apt-get install -y lftp
@@ -30,15 +30,7 @@ jobs:
       #       ls
       #       bye
       #     "
-  laravel-deploy:
-    runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Test FTP reachability
-        run: nc -vz -w 10 ${{ secrets.FTP_SERVER }} 21
 
       # - name: Setup PHP
       #   uses: shivammathur/setup-php@v2
@@ -47,6 +39,12 @@ jobs:
 
       # - name: Install dependencies
       #   run: composer install --no-dev --optimize-autoloader --no-interaction --no-progress
+
+  laravel-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+
 
       - name: Deploy to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
